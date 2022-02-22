@@ -1,1 +1,1 @@
-ffplay -f lavfi -i (python .py $args) -v panic -stats
+ffplay -f lavfi -i (python .py $args) -v error -stats

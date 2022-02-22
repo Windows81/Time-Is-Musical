@@ -38,9 +38,12 @@ def gen(delay, audio, video, timestamp):
     g_g0 = f"gradients=size=1920x1080:x0=1:x1=1919:y0=1:y1=1079:speed=0.05:r=4[g0]"
     g_g1 = f"gradients=size=1920x1080:x0=1919:x1=1:y0=1:y1=1079:speed=0.13:r=4[g1]"
     g_v = (
-        f"[g0][g1]blend=all_mode=interpolate,drawtext=text='%{{pts\:localtime\:{(u+1/8)%86400}\:%H\\\\\:%M\\\\\:%S}}':"
-        + "fontsize=127:fontfile=./.ttf:box=1:boxborderw=30:boxcolor=#1f2123ff:fontcolor=white:x=(w-tw)/2:y=(h-lh)/2,"
-        + "setpts=PTS-STARTPTS"
+        f"[g0][g1]blend=all_mode=interpolate,drawbox=w=600:h=250:x=\(iw-w\)/2:y=\(ih-h\)/2:color=#1f2123ff:t=fill,"
+        + f"drawtext=text='%{{pts\:localtime\:{u+1/8}\:%H\\\\\:%M\\\\\:%S}}':"
+        + f"fontsize=127:fontfile=./.ttf:fontcolor=white:x=(w-tw)/2:y=(h-lh)/2+36,"
+        + f"drawtext=text='%{{pts\:localtime\:{u+1/8}\:%Y-%m-%d}}':"
+        + f"fontsize=69:fontfile=./.ttf:fontcolor=white:x=(w-tw)/2:y=(h-lh)/2-60,"
+        + f"setpts=PTS-STARTPTS"
     )
 
     segs = filter(
