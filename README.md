@@ -1,6 +1,6 @@
 # Time is Musical!
 
-Musical Adaptation of WWV Time Station. I used PowerShell, FL Studio, and FFMPEG to stream this to [YouTube](https://youtu.be/uN1TBbDAThI).
+Musical Adaptation of WWV Time Station. I used PowerShell, FL Studio, and FFMPEG to stream this to [YouTube](https://youtu.be/DK0yXZgulTk).
 
 # Info
 
